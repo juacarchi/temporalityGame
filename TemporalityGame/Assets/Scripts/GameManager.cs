@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     int level; //level = 0 ==> Basico, level = 1 ==> Intermedio, level = 2 ==> Dificil; 
     public static GameManager instance;
     int numberToSucces;
+    int aciertos;
     bool completed;
     bool levelComplete;
     CursorLockMode wantedMode;
@@ -66,6 +67,10 @@ public class GameManager : MonoBehaviour
     public void SetNumberToSucces(int numberToSucces)
     {
         this.numberToSucces = numberToSucces;
+    }
+    public void SumaAcierto()
+    {
+        this.aciertos++;
     }
     public void Pause()
     {

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class GameplayNoriaManager : MonoBehaviour
 {
     public Button[] buttonList;
-
+    public GameObject[] dayList;
+    public Transform[] spaceToInstantiate;
     void Start()
     {
         RandomCabinas();  
@@ -19,14 +20,20 @@ public class GameplayNoriaManager : MonoBehaviour
     }
     public void RandomCabinas()
     {
-        int numberOfPistas = Random.Range(2, 5);
-        Debug.Log(numberOfPistas);
-        for (int i = 0; i < numberOfPistas; i++)
+        int numberToComplete = Random.Range(2, 5);
+        Debug.Log(numberToComplete);
+        GameManager.instance.SetNumberToSucces(numberToComplete);
+        for (int i = 0; i < numberToComplete; i++)
         {
-            int showText = Random.Range(0, buttonList.Length);
-            Cabina newCabina = buttonList[showText].GetComponent<Cabina>();
-            newCabina.textCabina.enabled = true;
+            Button[] listButtonProvisional = buttonList;
+            int ocultarText = Random.Range(0, listButtonProvisional.Length);
+            Cabina newCabina = listButtonProvisional[ocultarText].GetComponent<Cabina>();
+            newCabina.textCabina.enabled = false;
+            GameObject newGO = Instantiate(dayList[ocultarText], spaceToInstantiate[i].transform.position, Quaternion.identity);
+            newGO.transform.SetParent(spaceToInstantiate[i].transform);
+            //HACER LISTA EN VEZ DE ARRAY
         }
+        //CAMBIAR ESCALA, EVITAR QUE SE REPITA NÚMERO(HACER LISTA PROVISIONAL)
     }
     public void MuteMusic()
     {
