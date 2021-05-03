@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
 {
     DayButton new_dayButton;
+    Cabina new_cabina;
     public float zValue = 1;
 
     private void Awake()
@@ -30,6 +31,8 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
     {
         if (other.CompareTag(new_dayButton.tagButton))
         {
+            new_cabina = other.GetComponent<Cabina>();
+            new_cabina.textCabina.enabled = false;
             Debug.Log("Ese es su sitio");
         }
     }
