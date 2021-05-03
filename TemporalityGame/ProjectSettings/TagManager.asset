@@ -4,22 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - circuloRojo
-  - circuloAmarillo
-  - circuloVerde
-  - cuadradoAmarillo
-  - cuadradoRojo
-  - cuadradoVerde
-  - estrellaVerde
-  - estrellaRoja
-  - estrellaAmarilla
-  - circuloAzul
-  - cuadradoAzul
-  - estrellaAzul
-  - romboAmarillo
-  - romboAzul
-  - romboRojo
-  - romboVerde
+  - Lunes_noria
+  - Martes_noria
+  - Miercoles_noria
+  - Jueves_noria
+  - Viernes_noria
+  - Sabado_noria
+  - Domingo_noria
+  - Lunes_button
+  - Martes_button
+  - Miercoles_button
+  - Jueves_button
+  - Viernes_button
+  - Sabado_button
+  - Domingo_button
   layers:
   - Default
   - TransparentFX
