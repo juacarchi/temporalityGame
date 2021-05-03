@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            SetCursorState();
+        }
     }
     public void SetCompleted(bool completed)
     {

@@ -5,8 +5,14 @@ using UnityEngine.EventSystems;
 
 public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
 {
+    DayButton new_dayButton;
     public float zValue = 1;
-  
+
+    private void Awake()
+    {
+        new_dayButton = GetComponent<DayButton>();
+    }
+
     public void OnDrag(PointerEventData eventData)
     {
       
@@ -18,8 +24,13 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(new_dayButton.tagButton))
+        {
+            Debug.Log("Ese es su sitio");
+        }
     }
 }
