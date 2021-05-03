@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     int numberToSucces;
     bool completed;
     bool levelComplete;
+    CursorLockMode wantedMode;
     private void Awake()
     {
         if (instance == null)
@@ -21,15 +22,22 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
     }
+    
+
+    // Apply requested cursor state
+    void SetCursorState()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
     private void Update()
     {
-        //if(REQUISITOS PARA GANAR && !completed)
-        //{
-        //    completed = true;
-        //    UIManager.instance.Victory();
-        //    SoundNumberManager.instance.PlaySFX(SoundNumberManager.instance.victorySound);
-        //}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
     public void SetCompleted(bool completed)
     {
