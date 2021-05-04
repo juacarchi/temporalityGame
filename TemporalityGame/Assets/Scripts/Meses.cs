@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Meses : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string monthName;
+    public string tagName;
+    public AudioClip audioMonth;
 
-    // Update is called once per frame
-    void Update()
+    public Meses(string monthName, string tagName, AudioClip audioMonth)
     {
-        
+        this.monthName = monthName;
+        this.tagName = tagName;
+        this.audioMonth = audioMonth;
     }
 }

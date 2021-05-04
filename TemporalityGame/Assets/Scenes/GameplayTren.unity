@@ -866,7 +866,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1590427876}
+      - m_Target: {fileID: 0}
         m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1590427876}
+      - m_Target: {fileID: 0}
         m_MethodName: ReturnMenu
         m_Mode: 1
         m_Arguments:
@@ -2451,12 +2451,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1590427876}
+      objectReference: {fileID: 0}
     - target: {fileID: 4946634756887413761, guid: fac5c8d291110cf40b4b3811d3a939f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1590427876}
+      objectReference: {fileID: 0}
     - target: {fileID: 4946634756887413761, guid: fac5c8d291110cf40b4b3811d3a939f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -2902,7 +2902,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1590427876}
+      - m_Target: {fileID: 0}
         m_MethodName: ReturnMenu
         m_Mode: 1
         m_Arguments:
@@ -3078,7 +3078,7 @@ GameObject:
   - component: {fileID: 1590427877}
   - component: {fileID: 1590427876}
   m_Layer: 0
-  m_Name: GameplayNoriaManager
+  m_Name: GameplayTrainManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3093,34 +3093,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1590427875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5048d0b888a71da40910aa95f18cae74, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bcd37230cc562c45a5286eebbdda880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noriaAnimator: {fileID: 0}
-  buttonList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  dayList:
-  - {fileID: 2416410936871368162, guid: e882d90ee417d644c88bff500b894b66, type: 3}
-  - {fileID: 1520709712878767896, guid: aba16cb95b747ad4f947f636cad8f596, type: 3}
-  - {fileID: 5802090872014733513, guid: a7bae95effb7a2948b7b773fe3811f43, type: 3}
-  - {fileID: 3880907445947669946, guid: 716f9220d254f2242a704eeba27ea9ff, type: 3}
-  - {fileID: 5503466791646238401, guid: 501a243c9a74229438826357af5f902f, type: 3}
-  - {fileID: 948641977402478338, guid: 9339ed80cb059024c9da3434107ce83c, type: 3}
-  - {fileID: 4202582787480237990, guid: 3b8f0f840f613c548862697afdfcd7ff, type: 3}
-  spaceToInstantiate:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &1590427877
 Transform:
   m_ObjectHideFlags: 0
@@ -3855,7 +3830,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1590427876}
+      - m_Target: {fileID: 0}
         m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:

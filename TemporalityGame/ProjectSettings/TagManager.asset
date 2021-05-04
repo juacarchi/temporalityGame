@@ -18,6 +18,18 @@ TagManager:
   - Viernes_button
   - Sabado_button
   - Domingo_button
+  - enero
+  - febrero
+  - marzo
+  - abril
+  - mayo
+  - junio
+  - julio
+  - agosto
+  - septiembre
+  - octubre
+  - noviembre
+  - diciembre
   layers:
   - Default
   - TransparentFX
