@@ -6,10 +6,14 @@ using UnityEngine.UI;
 public class GameplayTrainManager : MonoBehaviour
 {
     public static GameplayTrainManager instance;
+    public Animator animTrain;
     public List<Text> textList;
     public List<Button> buttonList;
     public List<Transform> posButtons;
     public List<GameObject> vagonList;
+    int aciertosToWin = 2;
+    bool checkWin;
+
 
     public List<Meses> mesesList;
     private void Awake()
@@ -22,12 +26,26 @@ public class GameplayTrainManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
+        
     }
     private void Start()
     {
         RandomMonth();
+        checkWin = true;
     }
+    private void Update()
+    {
+        if (checkWin)
+        {
+            if (GameManager.instance.GetAciertos() == aciertosToWin)
+            {
+                Debug.Log("Victoria");
+                animTrain.SetTrigger("Win");
+                checkWin = false;
+            }
+        }
+    }
+
     public void RandomMonth()
     {
         int numberMonth = Random.Range(1, mesesList.Count - 1);

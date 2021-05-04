@@ -3184,6 +3184,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1273811129}
   - component: {fileID: 1273811130}
+  - component: {fileID: 1273811132}
+  - component: {fileID: 1273811131}
   m_Layer: 0
   m_Name: Vagon1
   m_TagString: Untagged
@@ -3256,6 +3258,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1273811131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273811128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12677300f3c9b74bbaf92d873b658ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1273811132
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273811128}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.26, y: 2.33}
+    newSize: {x: 4.26, y: 2.33}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.26, y: 2.33}
+  m_EdgeRadius: 0
 --- !u!1 &1335776368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,6 +3723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1559815960}
+  - component: {fileID: 1559815961}
   m_Layer: 5
   m_Name: Tren
   m_TagString: Untagged
@@ -3716,6 +3757,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -98.9}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1559815961
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559815959}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6972106cf2ca7254ea0e881d8a8e9837, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1590427875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,6 +3805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bcd37230cc562c45a5286eebbdda880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animTrain: {fileID: 1559815961}
   textList:
   - {fileID: 134203374}
   - {fileID: 971633463}
@@ -3755,6 +3816,9 @@ MonoBehaviour:
   posButtons:
   - {fileID: 1163764226}
   - {fileID: 815910428}
+  vagonList:
+  - {fileID: 1273811128}
+  - {fileID: 1714855731}
   mesesList:
   - {fileID: 4722788092058381558, guid: 167ca1108cd3c7f44a837d6240a6625c, type: 3}
   - {fileID: 1631062691117358108, guid: 47ecc7c8e2fb54645bea480813c4f739, type: 3}
@@ -4067,6 +4131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1714855732}
   - component: {fileID: 1714855733}
+  - component: {fileID: 1714855735}
+  - component: {fileID: 1714855734}
   m_Layer: 0
   m_Name: Vagon3
   m_TagString: Untagged
@@ -4139,6 +4205,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1714855734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714855731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d60cea40ee34394b848a64c4fa455e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1714855735
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714855731}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.28, y: 2.35}
+    newSize: {x: 4.26, y: 2.33}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.28, y: 2.35}
+  m_EdgeRadius: 0
 --- !u!1 &1746876899
 GameObject:
   m_ObjectHideFlags: 0
