@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: dc2e5cb88e7e6e747b116dc98afbbf8e
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Levels.unity
-    guid: 708c443c179f23f46ae827f771f7e64b
+    path: Assets/Scenes/GameplayNoria.unity
+    guid: 6a059d35937bb4c47ba7653aa2c954b0
+  - enabled: 1
+    path: Assets/Scenes/GameplayTren.unity
+    guid: 66f512251d08d004198fc98ea8e93d57
   m_configObjects: {}
