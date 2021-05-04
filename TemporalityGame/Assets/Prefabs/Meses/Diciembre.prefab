@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cc571c74fd10341a01f62926b6f468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monthName: Diciembre
+  monthName: DICIEMBRE
   tagName: diciembre
   audioMonth: {fileID: 0}
