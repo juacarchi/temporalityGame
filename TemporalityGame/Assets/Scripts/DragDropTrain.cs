@@ -34,8 +34,32 @@ public class DragDropTrain : MonoBehaviour, IDragHandler, IDropHandler
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         rb2D.simulated = true;
+        rb2D.isKinematic = false;
         Debug.Log("Suelta");
         Button buttonPressed = this.GetComponent<Button>();
         buttonPressed.enabled = true;
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (this.tag==other.tag)
+        {
+
+            if (other.GetComponent<Vagon1>() != null)
+            {
+                Vagon1 vagon1 = other.GetComponent<Vagon1>();
+                vagon1.SetTextActive();
+            }
+            if (other.GetComponent<Vagon2>() != null)
+            {
+                Vagon2 vagon2 = other.GetComponent<Vagon2>();
+                vagon2.SetTextActive();
+            }
+
+            Debug.Log("Ese es su sitio");
+            GameManager.instance.SumaAcierto();
+            Destroy(this.gameObject);
+
+        }
+    }
+
 }

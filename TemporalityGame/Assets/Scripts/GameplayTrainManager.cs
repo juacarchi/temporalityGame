@@ -5,11 +5,25 @@ using UnityEngine.UI;
 
 public class GameplayTrainManager : MonoBehaviour
 {
+    public static GameplayTrainManager instance;
     public List<Text> textList;
     public List<Button> buttonList;
     public List<Transform> posButtons;
+    public List<GameObject> vagonList;
 
     public List<Meses> mesesList;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
     private void Start()
     {
         RandomMonth();
@@ -27,11 +41,20 @@ public class GameplayTrainManager : MonoBehaviour
         textList[2].text = mesForward.monthName;
         textList[2].enabled = false;
 
+        vagonList[0].tag = mesPreview.tagName;
+        vagonList[1].tag = mesForward.tagName;
+
         Text textButton1 = buttonList[0].GetComponentInChildren<Text>();
         Text textButton2 = buttonList[1].GetComponentInChildren<Text>();
 
         textButton1.text = mesPreview.monthName;
         textButton2.text = mesForward.monthName;
+
+        Button button1 = buttonList[0].GetComponent<Button>();
+        Button button2 = buttonList[1].GetComponent<Button>();
+
+        button1.tag = mesPreview.tagName;
+        button2.tag = mesForward.tagName;
 
         //List<Transform> posButtonsProvisional = new List<Transform>(posButtons);
         for (int i = 0; i < buttonList.Count; i++)
@@ -41,4 +64,14 @@ public class GameplayTrainManager : MonoBehaviour
             posButtons.RemoveAt(numberPos);
         }
     }
+    public void SetTextVagon1Active()
+    {
+        textList[0].enabled = true;
+    }
+    public void SetTextVagon2Active()
+    {
+        textList[2].enabled = true;
+    }
+
+
 }
