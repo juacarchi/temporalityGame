@@ -72,6 +72,10 @@ public class GameManager : MonoBehaviour
     {
         this.aciertos++;
     }
+    public int GetAciertos()
+    {
+        return aciertos;
+    }
     public void Pause()
     {
         Time.timeScale = 0;

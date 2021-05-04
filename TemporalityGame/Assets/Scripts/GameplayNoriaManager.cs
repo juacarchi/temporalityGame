@@ -1,40 +1,63 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameplayNoriaManager : MonoBehaviour
 {
-    public Button[] buttonList;
+    public Animator noriaAnimator;
+    public List<Button> buttonList;
     public GameObject[] dayList;
     public Transform[] spaceToInstantiate;
+    int aciertosToWin;
+    bool checkWin;
     void Start()
     {
-        RandomCabinas();  
+        RandomCabinas();
+        
     }
-
-    // Update is called once per frame
     void Update()
     {
-    
+        if (checkWin)
+        {
+            if (GameManager.instance.GetAciertos() == aciertosToWin)
+            {
+                Debug.Log("Victoria");
+                checkWin = false;
+                noriaAnimator.SetTrigger("Win");
+            }
+        }
+        
+
     }
+
     public void RandomCabinas()
     {
         int numberToComplete = Random.Range(2, 5);
         Debug.Log(numberToComplete);
+        aciertosToWin = numberToComplete;
         GameManager.instance.SetNumberToSucces(numberToComplete);
+        List<Button> listButtonProvisional = new List<Button>(buttonList);
+        List<GameObject> dayListProvisional = new List<GameObject>(dayList);
         for (int i = 0; i < numberToComplete; i++)
         {
-            Button[] listButtonProvisional = buttonList;
-            int ocultarText = Random.Range(0, listButtonProvisional.Length);
+            Debug.Log("Antes" + listButtonProvisional.Count);
+            int ocultarText = Random.Range(0, listButtonProvisional.Count);
             Cabina newCabina = listButtonProvisional[ocultarText].GetComponent<Cabina>();
             newCabina.textCabina.enabled = false;
-            GameObject newGO = Instantiate(dayList[ocultarText], spaceToInstantiate[i].transform.position, Quaternion.identity);
+            GameObject newGO = Instantiate(dayListProvisional[ocultarText], spaceToInstantiate[i].transform.position, Quaternion.identity);
             newGO.transform.SetParent(spaceToInstantiate[i].transform);
+            newGO.transform.localScale = new Vector3(1, 1, 1);
+            listButtonProvisional.RemoveAt(ocultarText);
+            dayListProvisional.RemoveAt(ocultarText);
+            Debug.Log("Despues" + listButtonProvisional.Count);
+
             //HACER LISTA EN VEZ DE ARRAY
         }
         //CAMBIAR ESCALA, EVITAR QUE SE REPITA NÚMERO(HACER LISTA PROVISIONAL)
+        checkWin = true;
     }
+    
+
     public void MuteMusic()
     {
         MusicManager.instance.MuteMusic();

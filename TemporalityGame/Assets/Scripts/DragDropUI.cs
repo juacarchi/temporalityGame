@@ -43,8 +43,11 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
         if (other.CompareTag(new_dayButton.tagButton))
         {
             new_cabina = other.GetComponent<Cabina>();
-            new_cabina.textCabina.enabled = false;
+            new_cabina.textCabina.enabled = true;
             Debug.Log("Ese es su sitio");
+            GameManager.instance.SumaAcierto();
+            Destroy(this.gameObject);
+
         }
     }
 }
