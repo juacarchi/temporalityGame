@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 {
     Image imageElement;
@@ -29,7 +27,7 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        
+
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = zValue;
         Vector3 point = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -43,7 +41,7 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        
+
         rb2D.simulated = true;
         rb2D.isKinematic = false;
         Debug.Log("Suelta");
@@ -56,7 +54,7 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
         if (!isDraging)
         {
             rectGO.anchoredPosition = Vector2.MoveTowards(rectGO.anchoredPosition, anchoredPositionInitial, step);
-            
+
         }
         step = speed * Time.deltaTime;
         if (isReturning)
@@ -68,8 +66,8 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        if(other.CompareTag(this.tag))
+
+        if (other.CompareTag(this.tag))
         {
             if (other.CompareTag("antes"))
             {
@@ -102,6 +100,10 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
                 Destroy(this.gameObject);
             }
         }
-        else { isReturning = true; }
+        else
+        {
+            isReturning = true;
+            SoundManager.instance.PlaySFX(SoundManager.instance.failSound);
+        }
     }
 }

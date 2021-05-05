@@ -11,12 +11,21 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
     DayButton new_dayButton;
     Cabina new_cabina;
     public float zValue = 1;
+    float step;
+    float speed = 600;
+    RectTransform rectGO;
+    bool isDraging = true;
+    bool isReturning;
+    Vector2 anchoredPositionInitial;
 
     private void Awake()
     {
         new_dayButton = GetComponent<DayButton>();
         rb2D = GetComponent<Rigidbody2D>();
         bx=GetComponent<BoxCollider2D>();
+        rectGO = GetComponent<RectTransform>();
+        anchoredPositionInitial = rectGO.anchoredPosition;
+       
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -28,6 +37,8 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
         Vector3 point = Camera.main.ScreenToWorldPoint(mousePosition);
         transform.position = point;
         rb2D.simulated = false ;
+        isDraging = true;
+        isReturning = false;
     }
     
     public void OnDrop(PointerEventData eventData)
@@ -37,6 +48,21 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
         Debug.Log("Suelta");
         Button buttonPressed = this.GetComponent<Button>();
         buttonPressed.enabled = true;
+        isDraging = false;
+    }
+    private void Update()
+    {
+        if (!isDraging)
+        {
+            rectGO.anchoredPosition = Vector2.MoveTowards(rectGO.anchoredPosition, anchoredPositionInitial, step);
+
+        }
+        step = speed * Time.deltaTime;
+        if (isReturning)
+        {
+            rb2D.simulated = false;
+            rb2D.isKinematic = false;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -49,6 +75,11 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
             FXManager.instance.InstantitateFX(0, this.transform);
             Destroy(this.gameObject);
 
+        }
+        else
+        {
+            isReturning = true;
+            SoundManager.instance.PlaySFX(SoundManager.instance.failSound);
         }
     }
 }

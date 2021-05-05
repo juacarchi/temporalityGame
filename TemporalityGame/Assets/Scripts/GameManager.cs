@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     public void SumaAcierto()
     {
         this.aciertos++;
+        SoundManager.instance.PlaySFX(SoundManager.instance.correctSound);
     }
     public int GetAciertos()
     {
