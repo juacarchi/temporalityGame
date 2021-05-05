@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameplayTrainManager : MonoBehaviour
 {
     public static GameplayTrainManager instance;
+    public Canvas canvasVictory;
     public Animator animTrain;
     public List<Text> textList;
     public List<Button> buttonList;
@@ -26,7 +27,7 @@ public class GameplayTrainManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        
+        canvasVictory.enabled = false;
     }
     private void Start()
     {
@@ -112,7 +113,10 @@ public class GameplayTrainManager : MonoBehaviour
         ManagerScene.instance.SetNumberSceneToChange(0);
         TransitionManager.instance.AnimateTransition();
     }
-
+    public void Victory()
+    {
+        canvasVictory.enabled = true;
+    }
 
 
 }
