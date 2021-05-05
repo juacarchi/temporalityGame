@@ -30,6 +30,9 @@ TagManager:
   - octubre
   - noviembre
   - diciembre
+  - antes
+  - ahora
+  - despues
   layers:
   - Default
   - TransparentFX

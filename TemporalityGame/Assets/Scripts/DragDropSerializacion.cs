@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 {
+    Image imageElement;
     RectTransform rectGO;
     Rigidbody2D rb2D;
     BoxCollider2D bx;
@@ -17,6 +18,7 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 
     private void Awake()
     {
+        imageElement = GetComponent<Image>();
         rectGO = GetComponent<RectTransform>();
         anchoredPositionInitial = rectGO.anchoredPosition;
 
@@ -58,7 +60,33 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Correcta");
-        Destroy(this.gameObject);
+        
+        if(other.CompareTag(this.tag))
+        {
+            if (other.CompareTag("antes"))
+            {
+                Image imageOther = other.GetComponent<Image>();
+                imageOther.color = Color.white;
+                imageOther.sprite = imageElement.sprite;
+                Debug.Log("Antes");
+                Destroy(this.gameObject);
+            }
+            else if (other.CompareTag("ahora"))
+            {
+                Image imageOther = other.GetComponent<Image>();
+                imageOther.color = Color.white;
+                imageOther.sprite = imageElement.sprite;
+                Debug.Log("Ahora");
+                Destroy(this.gameObject);
+            }
+            else if (other.CompareTag("despues"))
+            {
+                Image imageOther = other.GetComponent<Image>();
+                imageOther.color = Color.white;
+                imageOther.sprite = imageElement.sprite;
+                Debug.Log("Después");
+                Destroy(this.gameObject);
+            }
+        }
     }
 }
