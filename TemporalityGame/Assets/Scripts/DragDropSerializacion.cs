@@ -69,6 +69,8 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
                 imageOther.color = Color.white;
                 imageOther.sprite = imageElement.sprite;
                 Debug.Log("Antes");
+                FXManager.instance.InstantitateFX(0, this.transform);
+                GameManager.instance.SumaAcierto();
                 Destroy(this.gameObject);
             }
             else if (other.CompareTag("ahora"))
@@ -77,6 +79,8 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
                 imageOther.color = Color.white;
                 imageOther.sprite = imageElement.sprite;
                 Debug.Log("Ahora");
+                FXManager.instance.InstantitateFX(0, this.transform);
+                GameManager.instance.SumaAcierto();
                 Destroy(this.gameObject);
             }
             else if (other.CompareTag("despues"))
@@ -85,6 +89,8 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
                 imageOther.color = Color.white;
                 imageOther.sprite = imageElement.sprite;
                 Debug.Log("Después");
+                FXManager.instance.InstantitateFX(0, this.transform);
+                GameManager.instance.SumaAcierto();
                 Destroy(this.gameObject);
             }
         }

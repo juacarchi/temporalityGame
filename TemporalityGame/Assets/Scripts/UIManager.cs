@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
     public void Victory()
     {
         canvasVictory.enabled = true;
-        animVictory.SetTrigger("StartAnim");
+        //animVictory.SetTrigger("StartAnim");
         pauseButton.interactable = false;
         GameManager.instance.SetLevelComplete(true);
     }

@@ -46,6 +46,7 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
             new_cabina.textCabina.enabled = true;
             Debug.Log("Ese es su sitio");
             GameManager.instance.SumaAcierto();
+            FXManager.instance.InstantitateFX(0, this.transform);
             Destroy(this.gameObject);
 
         }

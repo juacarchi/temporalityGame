@@ -57,6 +57,7 @@ public class DragDropTrain : MonoBehaviour, IDragHandler, IDropHandler
 
             Debug.Log("Ese es su sitio");
             GameManager.instance.SumaAcierto();
+            FXManager.instance.InstantitateFX(0, this.transform);
             Destroy(this.gameObject);
 
         }

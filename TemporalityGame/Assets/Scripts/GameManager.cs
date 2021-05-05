@@ -76,6 +76,10 @@ public class GameManager : MonoBehaviour
     {
         return aciertos;
     }
+    public void SetAciertos(int aciertos)
+    {
+        this.aciertos = aciertos;
+    }
     public void Pause()
     {
         Time.timeScale = 0;

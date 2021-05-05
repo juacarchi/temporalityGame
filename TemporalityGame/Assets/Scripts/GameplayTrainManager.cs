@@ -92,4 +92,27 @@ public class GameplayTrainManager : MonoBehaviour
     }
 
 
+    public void MuteMusic()
+    {
+        MusicManager.instance.MuteMusic();
+    }
+    public void PlayButton()
+    {
+        SoundManager.instance.PlaySFX(SoundManager.instance.buttonSound);
+    }
+    public void ResetGame()
+    {
+        GameManager.instance.Resume();
+        ManagerScene.instance.SetNumberSceneToChange(2);
+        TransitionManager.instance.AnimateTransition();
+    }
+    public void ReturnMenu()
+    {
+        GameManager.instance.Resume();
+        ManagerScene.instance.SetNumberSceneToChange(0);
+        TransitionManager.instance.AnimateTransition();
+    }
+
+
+
 }
