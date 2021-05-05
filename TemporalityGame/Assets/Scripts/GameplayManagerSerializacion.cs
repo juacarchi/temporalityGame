@@ -33,12 +33,14 @@ public class GameplayManagerSerializacion : MonoBehaviour
     public void ResetGame()
     {
         GameManager.instance.Resume();
+        GameManager.instance.SetAciertos(0);
         ManagerScene.instance.SetNumberSceneToChange(3);
         TransitionManager.instance.AnimateTransition();
     }
     public void ReturnMenu()
     {
         GameManager.instance.Resume();
+        GameManager.instance.SetAciertos(0);
         ManagerScene.instance.SetNumberSceneToChange(0);
         TransitionManager.instance.AnimateTransition();
     }

@@ -33,6 +33,7 @@ public class GameplayTrainManager : MonoBehaviour
     {
         RandomMonth();
         checkWin = true;
+        animTrain.SetTrigger("Start");
     }
     private void Update()
     {
@@ -103,6 +104,7 @@ public class GameplayTrainManager : MonoBehaviour
     }
     public void ResetGame()
     {
+        GameManager.instance.SetAciertos(0);
         GameManager.instance.Resume();
         ManagerScene.instance.SetNumberSceneToChange(2);
         TransitionManager.instance.AnimateTransition();
@@ -110,6 +112,7 @@ public class GameplayTrainManager : MonoBehaviour
     public void ReturnMenu()
     {
         GameManager.instance.Resume();
+        GameManager.instance.SetAciertos(0);
         ManagerScene.instance.SetNumberSceneToChange(0);
         TransitionManager.instance.AnimateTransition();
     }

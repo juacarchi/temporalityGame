@@ -4,12 +4,29 @@ using UnityEngine.UI;
 
 public class GameplayNoriaManager : MonoBehaviour
 {
+    public static GameplayNoriaManager instance;
+    public Canvas canvasVictory;
     public Animator noriaAnimator;
     public List<Button> buttonList;
     public GameObject[] dayList;
     public Transform[] spaceToInstantiate;
     int aciertosToWin;
     bool checkWin;
+
+    private void Awake()
+    {
+        
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+            canvasVictory.enabled = false;
+        
+    }
     void Start()
     {
         RandomCabinas();
@@ -70,12 +87,18 @@ public class GameplayNoriaManager : MonoBehaviour
     {
         GameManager.instance.Resume();
         ManagerScene.instance.SetNumberSceneToChange(1);
+        GameManager.instance.SetAciertos(0);
         TransitionManager.instance.AnimateTransition();
     }
     public void ReturnMenu()
     {
         GameManager.instance.Resume();
+        GameManager.instance.SetAciertos(0);
         ManagerScene.instance.SetNumberSceneToChange(0);
         TransitionManager.instance.AnimateTransition();
+    }
+    public void Victory()
+    {
+        canvasVictory.enabled = true;
     }
 }

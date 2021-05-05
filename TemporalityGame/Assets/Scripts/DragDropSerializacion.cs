@@ -14,6 +14,7 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 
     public float zValue = 1;
     bool isDraging = true;
+    bool isReturning;
     Vector2 anchoredPositionInitial;
 
     private void Awake()
@@ -36,6 +37,7 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
         rb2D.simulated = false;
         rb2D.isKinematic = false;
         isDraging = true;
+        isReturning = false;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -54,8 +56,14 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
         if (!isDraging)
         {
             rectGO.anchoredPosition = Vector2.MoveTowards(rectGO.anchoredPosition, anchoredPositionInitial, step);
+            
         }
         step = speed * Time.deltaTime;
+        if (isReturning)
+        {
+            rb2D.simulated = false;
+            rb2D.isKinematic = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -94,5 +102,6 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
                 Destroy(this.gameObject);
             }
         }
+        else { isReturning = true; }
     }
 }
