@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class GameplayNoriaManager : MonoBehaviour
 {
     public static GameplayNoriaManager instance;
-    public Canvas canvasVictory;
+
+    public GameObject canvasVictory;
+    public Animator animPanelVictory;
     public Animator noriaAnimator;
     public List<Button> buttonList;
     public GameObject[] dayList;
@@ -24,7 +26,7 @@ public class GameplayNoriaManager : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
-            canvasVictory.enabled = false;
+            canvasVictory.SetActive(false);
         
     }
     void Start()
@@ -89,6 +91,7 @@ public class GameplayNoriaManager : MonoBehaviour
         ManagerScene.instance.SetNumberSceneToChange(1);
         GameManager.instance.SetAciertos(0);
         TransitionManager.instance.AnimateTransition();
+        canvasVictory.SetActive(false);
     }
     public void ReturnMenu()
     {
@@ -96,9 +99,10 @@ public class GameplayNoriaManager : MonoBehaviour
         GameManager.instance.SetAciertos(0);
         ManagerScene.instance.SetNumberSceneToChange(0);
         TransitionManager.instance.AnimateTransition();
+        canvasVictory.SetActive(false);
     }
     public void Victory()
     {
-        canvasVictory.enabled = true;
+        canvasVictory.SetActive(true);
     }
 }

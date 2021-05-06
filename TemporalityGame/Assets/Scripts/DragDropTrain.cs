@@ -75,11 +75,13 @@ public class DragDropTrain : MonoBehaviour, IDragHandler, IDropHandler
             {
                 Vagon1 vagon1 = other.GetComponent<Vagon1>();
                 vagon1.SetTextActive();
+                vagon1.SetImage(imageElement.sprite);
             }
             if (other.GetComponent<Vagon2>() != null)
             {
                 Vagon2 vagon2 = other.GetComponent<Vagon2>();
                 vagon2.SetTextActive();
+                vagon2.SetImage(imageElement.sprite);
             }
 
             Debug.Log("Ese es su sitio");

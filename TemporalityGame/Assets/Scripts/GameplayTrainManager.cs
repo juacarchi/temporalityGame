@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameplayTrainManager : MonoBehaviour
 {
     public static GameplayTrainManager instance;
-    public Canvas canvasVictory;
+    public GameObject canvasVictory;
     public Animator animTrain;
     public List<Text> textList;
     public List<Button> buttonList;
@@ -27,7 +27,7 @@ public class GameplayTrainManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        canvasVictory.enabled = false;
+        canvasVictory.SetActive(false);
     }
     private void Start()
     {
@@ -108,6 +108,7 @@ public class GameplayTrainManager : MonoBehaviour
         GameManager.instance.Resume();
         ManagerScene.instance.SetNumberSceneToChange(2);
         TransitionManager.instance.AnimateTransition();
+        canvasVictory.SetActive(false);
     }
     public void ReturnMenu()
     {
@@ -115,10 +116,11 @@ public class GameplayTrainManager : MonoBehaviour
         GameManager.instance.SetAciertos(0);
         ManagerScene.instance.SetNumberSceneToChange(0);
         TransitionManager.instance.AnimateTransition();
+        canvasVictory.SetActive(false);
     }
     public void Victory()
     {
-        canvasVictory.enabled = true;
+        canvasVictory.SetActive(true);
     }
 
 

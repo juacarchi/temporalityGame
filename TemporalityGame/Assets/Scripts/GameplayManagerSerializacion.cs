@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameplayManagerSerializacion : MonoBehaviour
 {
-    public Canvas canvasVictory;
+    public GameObject canvasVictory;
     int aciertosToComplete = 3; //ANTES, AHORA Y DESPUÉS
     private void Awake()
     {
-        canvasVictory.enabled = false;
+        canvasVictory.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,16 +36,19 @@ public class GameplayManagerSerializacion : MonoBehaviour
         GameManager.instance.SetAciertos(0);
         ManagerScene.instance.SetNumberSceneToChange(3);
         TransitionManager.instance.AnimateTransition();
+        canvasVictory.SetActive(false);
     }
     public void ReturnMenu()
     {
+        
         GameManager.instance.Resume();
         GameManager.instance.SetAciertos(0);
         ManagerScene.instance.SetNumberSceneToChange(0);
         TransitionManager.instance.AnimateTransition();
+        canvasVictory.SetActive(false);
     }
     public void Victory()
     {
-        canvasVictory.enabled = true;
+        canvasVictory.SetActive(true);
     }
 }
