@@ -6,8 +6,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip buttonSound;
     public AudioClip failSound;
     public AudioClip correctSound;
+    public AudioClip trainSound;
+    public AudioClip childVictory;
+    public AudioClip noriaSound;
     public static SoundManager instance;
     public AudioSource audioSource;
+    
     //Aqui podemos meter una serie de AudioClip para poder llamarlos desde otros elementos.
     private void Awake()
     {

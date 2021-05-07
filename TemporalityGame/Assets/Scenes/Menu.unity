@@ -1694,6 +1694,16 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: f086f6330bcc91446bdc8897058d07e7, type: 3}
     - target: {fileID: 6668687967094528125, guid: d1f575014fa259a41b8a26c570b228d1,
         type: 3}
+      propertyPath: noriaSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 331ed005a0289224b8a3be141fbda148, type: 3}
+    - target: {fileID: 6668687967094528125, guid: d1f575014fa259a41b8a26c570b228d1,
+        type: 3}
+      propertyPath: trainSound
+      value: 
+      objectReference: {fileID: 8300000, guid: aac593d8e818ab945b2bfda31fa491e0, type: 3}
+    - target: {fileID: 6668687967094528125, guid: d1f575014fa259a41b8a26c570b228d1,
+        type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1722428589}
@@ -1702,6 +1712,11 @@ PrefabInstance:
       propertyPath: buttonSound
       value: 
       objectReference: {fileID: 8300000, guid: 7985c117a1aa8754ba82c862fe608636, type: 3}
+    - target: {fileID: 6668687967094528125, guid: d1f575014fa259a41b8a26c570b228d1,
+        type: 3}
+      propertyPath: childVictory
+      value: 
+      objectReference: {fileID: 8300000, guid: 133bd57cbbb766f41b910413a0d364c5, type: 3}
     - target: {fileID: 6668687967094528125, guid: d1f575014fa259a41b8a26c570b228d1,
         type: 3}
       propertyPath: correctSound
@@ -1826,13 +1841,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f2b4a69e0bbc20c499968eb06a17a926, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.52
+  m_Volume: 0.16
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 130
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

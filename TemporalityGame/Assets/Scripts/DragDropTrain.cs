@@ -27,7 +27,7 @@ public class DragDropTrain : MonoBehaviour, IDragHandler, IDropHandler
         rb2D = GetComponent<Rigidbody2D>();
         bx = GetComponent<BoxCollider2D>();
     }
-
+    
     public void OnDrag(PointerEventData eventData)
     {
         Button buttonPressed = this.GetComponent<Button>();

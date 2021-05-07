@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7220945646061980979}
   - component: {fileID: 3297399641678076549}
   - component: {fileID: 3297399641678076559}
+  - component: {fileID: 5102181747926948009}
   m_Layer: 5
   m_Name: Lunes
   m_TagString: Untagged
@@ -200,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2911407036980272280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5102181747926948009}
+        m_MethodName: PlayDaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: f359cad7ed80d95488002e6e6fab3558,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9123704725145488110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,3 +290,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zValue: 1
+--- !u!114 &5102181747926948009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2416410936871368162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a26f6ec1b224754ebfcdcea02ba3046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

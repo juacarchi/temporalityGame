@@ -43,6 +43,7 @@ public class GameplayNoriaManager : MonoBehaviour
                 Debug.Log("Victoria");
                 checkWin = false;
                 noriaAnimator.SetTrigger("Win");
+                SoundManager.instance.PlaySFX(SoundManager.instance.noriaSound);
             }
         }
         
@@ -63,9 +64,12 @@ public class GameplayNoriaManager : MonoBehaviour
             int ocultarText = Random.Range(0, listButtonProvisional.Count);
             Cabina newCabina = listButtonProvisional[ocultarText].GetComponent<Cabina>();
             newCabina.textCabina.enabled = false;
+            Button buttonCabina = newCabina.GetComponent<Button>();
+            buttonCabina.interactable = false;
             GameObject newGO = Instantiate(dayListProvisional[ocultarText], spaceToInstantiate[i].transform.position, Quaternion.identity);
             newGO.transform.SetParent(spaceToInstantiate[i].transform);
             newGO.transform.localScale = new Vector3(1, 1, 1);
+            
             listButtonProvisional.RemoveAt(ocultarText);
             dayListProvisional.RemoveAt(ocultarText);
             Debug.Log("Despues" + listButtonProvisional.Count);
@@ -104,5 +108,6 @@ public class GameplayNoriaManager : MonoBehaviour
     public void Victory()
     {
         canvasVictory.SetActive(true);
+        SoundManager.instance.PlaySFX(SoundManager.instance.childVictory);
     }
 }

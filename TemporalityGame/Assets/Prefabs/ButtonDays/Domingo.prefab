@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 9218782641608036215}
   - component: {fileID: 3898135641094936769}
   - component: {fileID: 3898135641094936779}
+  - component: {fileID: -6723268255810706905}
   m_Layer: 5
   m_Name: Domingo
   m_TagString: Untagged
@@ -200,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3728179432594087644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -6723268255810706905}
+        m_MethodName: PlayDaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 7c99d247d94298848bab52d8645c543a,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7297989930949642410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,3 +290,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zValue: 1
+--- !u!114 &-6723268255810706905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202582787480237990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a26f6ec1b224754ebfcdcea02ba3046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

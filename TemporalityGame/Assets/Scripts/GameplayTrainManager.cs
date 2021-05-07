@@ -14,7 +14,9 @@ public class GameplayTrainManager : MonoBehaviour
     public List<GameObject> vagonList;
     int aciertosToWin = 2;
     bool checkWin;
-
+    AudioClip audioVagon1;
+    AudioClip audioVagon2;
+    AudioClip audioVagon3;
 
     public List<Meses> mesesList;
     private void Awake()
@@ -44,6 +46,7 @@ public class GameplayTrainManager : MonoBehaviour
                 Debug.Log("Victoria");
                 animTrain.SetTrigger("Win");
                 checkWin = false;
+                SoundManager.instance.PlaySFX(SoundManager.instance.trainSound);
             }
         }
     }
@@ -75,6 +78,10 @@ public class GameplayTrainManager : MonoBehaviour
 
         button1.tag = mesPreview.tagName;
         button2.tag = mesForward.tagName;
+
+        audioVagon1 = mesPreview.audioMonth;
+        audioVagon2 = mesChosen.audioMonth;
+        audioVagon3 = mesForward.audioMonth;
 
         //List<Transform> posButtonsProvisional = new List<Transform>(posButtons);
         for (int i = 0; i < buttonList.Count; i++)
@@ -121,7 +128,19 @@ public class GameplayTrainManager : MonoBehaviour
     public void Victory()
     {
         canvasVictory.SetActive(true);
+        SoundManager.instance.PlaySFX(SoundManager.instance.childVictory);
     }
-
+    public void PlayVagon2Sound()
+    {
+        SoundManager.instance.PlaySFX(audioVagon2);
+    }
+    public void PlayVagon1Sound()
+    {
+        SoundManager.instance.PlaySFX(audioVagon1);
+    }
+    public void PlayVagon3Sound()
+    {
+        SoundManager.instance.PlaySFX(audioVagon3);
+    }
 
 }
