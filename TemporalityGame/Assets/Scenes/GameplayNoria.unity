@@ -230,8 +230,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -197, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: -147.2, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57297009
 MonoBehaviour:
@@ -782,8 +782,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 161.82, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 127.7, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &211127694
 MonoBehaviour:
@@ -1635,6 +1635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCabina: Viernes
   textCabina: {fileID: 1510502412}
+  audioCabina: {fileID: 8300000, guid: 3211ee6be17b68149a12d29b09d1a5a4, type: 3}
 --- !u!1 &576909360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,6 +1941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCabina: Domingo
   textCabina: {fileID: 1481671235}
+  audioCabina: {fileID: 8300000, guid: 7c99d247d94298848bab52d8645c543a, type: 3}
 --- !u!1 &589806246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,6 +2488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCabina: "Mi\xE9rcoles"
   textCabina: {fileID: 1889878028}
+  audioCabina: {fileID: 8300000, guid: 8fbcff817128f614d939335ca9884e10, type: 3}
 --- !u!1 &762566191
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,6 +3501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCabina: Martes
   textCabina: {fileID: 696717622}
+  audioCabina: {fileID: 8300000, guid: 73a503799f915074b995c3513b7e98b4, type: 3}
 --- !u!1 &1119497995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,6 +3849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCabina: Lunes
   textCabina: {fileID: 178905119}
+  audioCabina: {fileID: 8300000, guid: f359cad7ed80d95488002e6e6fab3558, type: 3}
 --- !u!1 &1225476865
 GameObject:
   m_ObjectHideFlags: 0
@@ -10300,8 +10305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -385.065, y: 143.94}
-  m_SizeDelta: {x: 770.13, y: 287.88}
+  m_AnchoredPosition: {x: -319.5, y: 120.2}
+  m_SizeDelta: {x: 568.5, y: 166}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1649668178
 MonoBehaviour:
@@ -10576,6 +10581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCabina: Jueves
   textCabina: {fileID: 203992847}
+  audioCabina: {fileID: 8300000, guid: e1fb5eafab6e83f47bdce3373da49705, type: 3}
 --- !u!1 &1695908337
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,6 +11356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCabina: Sabado
   textCabina: {fileID: 1646682905}
+  audioCabina: {fileID: 8300000, guid: bb134ac279cf3454fb2e3116cac1f394, type: 3}
 --- !u!1 &1895375887
 GameObject:
   m_ObjectHideFlags: 0

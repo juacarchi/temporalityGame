@@ -14,9 +14,9 @@ public class GameplayTrainManager : MonoBehaviour
     public List<GameObject> vagonList;
     int aciertosToWin = 2;
     bool checkWin;
-    AudioClip audioVagon1;
+    public AudioClip audioVagon1;
     AudioClip audioVagon2;
-    AudioClip audioVagon3;
+    public AudioClip audioVagon3;
 
     public List<Meses> mesesList;
     private void Awake()

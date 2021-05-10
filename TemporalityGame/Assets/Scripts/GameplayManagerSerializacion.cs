@@ -50,5 +50,6 @@ public class GameplayManagerSerializacion : MonoBehaviour
     public void Victory()
     {
         canvasVictory.SetActive(true);
+        SoundManager.instance.PlaySFX(SoundManager.instance.childVictory);
     }
 }

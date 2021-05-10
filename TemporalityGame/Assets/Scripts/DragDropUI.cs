@@ -74,6 +74,7 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
             GameManager.instance.SumaAcierto();
             FXManager.instance.InstantitateFX(0, this.transform);
             Destroy(this.gameObject);
+            AudioCorrectManager.instance.PlaySFX(new_cabina.audioCabina);
 
         }
         else
