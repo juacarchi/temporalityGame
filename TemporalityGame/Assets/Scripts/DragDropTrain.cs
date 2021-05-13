@@ -17,7 +17,7 @@ public class DragDropTrain : MonoBehaviour, IDragHandler, IDropHandler
     bool isDraging = true;
     bool isReturning;
     Vector2 anchoredPositionInitial;
-    private void Awake()
+    private void Start()
     {
 
         imageElement = GetComponent<Image>();

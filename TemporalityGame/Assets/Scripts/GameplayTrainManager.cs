@@ -30,10 +30,10 @@ public class GameplayTrainManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         canvasVictory.SetActive(false);
+        RandomMonth();
     }
     private void Start()
     {
-        RandomMonth();
         checkWin = true;
         animTrain.SetTrigger("Start");
     }
