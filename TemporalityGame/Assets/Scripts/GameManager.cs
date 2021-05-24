@@ -28,22 +28,9 @@ public class GameManager : MonoBehaviour
     
 
     // Apply requested cursor state
-    void SetCursorState()
-    {
-        Cursor.lockState = CursorLockMode.Confined;
-    }
+    
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            SetCursorState();
-        }
-    }
+  
     public void SetCompleted(bool completed)
     {
         this.completed = completed;

@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
 {
     Rigidbody2D rb2D;
     BoxCollider2D bx;
-
+    public float xMin, xMax;
+    public float yMin, yMax;
     DayButton new_dayButton;
     Cabina new_cabina;
     public float zValue = 1;
@@ -20,12 +19,16 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
 
     private void Awake()
     {
+        xMin = -6.9f;
+        xMax = 6.9f;
+        yMin = -4.6f;
+        yMax = 4.6f;
+
         new_dayButton = GetComponent<DayButton>();
         rb2D = GetComponent<Rigidbody2D>();
-        bx=GetComponent<BoxCollider2D>();
+        bx = GetComponent<BoxCollider2D>();
         rectGO = GetComponent<RectTransform>();
         anchoredPositionInitial = rectGO.anchoredPosition;
-       
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -35,12 +38,15 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = zValue;
         Vector3 point = Camera.main.ScreenToWorldPoint(mousePosition);
+        
+        point.x = Mathf.Clamp(point.x, xMin, xMax);
+        point.y = Mathf.Clamp(point.y, yMin, yMax);
         transform.position = point;
-        rb2D.simulated = false ;
+        rb2D.simulated = false;
         isDraging = true;
         isReturning = false;
     }
-    
+
     public void OnDrop(PointerEventData eventData)
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
@@ -75,7 +81,6 @@ public class DragDropUI : MonoBehaviour, IDragHandler, IDropHandler
             FXManager.instance.InstantitateFX(0, this.transform);
             Destroy(this.gameObject);
             AudioCorrectManager.instance.PlaySFX(new_cabina.audioCabina);
-
         }
         else
         {

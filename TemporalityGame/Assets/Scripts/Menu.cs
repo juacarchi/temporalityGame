@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
@@ -15,8 +16,9 @@ public class Menu : MonoBehaviour
         ManagerScene.instance.SetNumberSceneToChange(sceneIndex);
         TransitionManager.instance.AnimateTransition();
     }
-    public void PlayButton()
+    public void PlayButton(Button buttonPressed)
     {
         SoundManager.instance.PlaySFX(SoundManager.instance.buttonSound);
+        buttonPressed.interactable = false;
     }
 }

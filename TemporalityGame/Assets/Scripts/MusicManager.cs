@@ -7,6 +7,7 @@ public class MusicManager : MonoBehaviour
     //Declarar variable estática singleton
     public static MusicManager instance;
     public AudioSource audioSource;
+    AudioSource audioSource2;
     //Aqui podemos meter una serie de AudioClip para poder llamarlos desde otros elementos.
     private void Awake()
     {
@@ -21,6 +22,10 @@ public class MusicManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    private void Start()
+    {
+        audioSource2 = SoundManager.instance.audioSource;
+    }
 
     //Método para modificar volumen
     public void MuteMusic()
@@ -33,6 +38,14 @@ public class MusicManager : MonoBehaviour
         {
             audioSource.mute = false;
         }
-        
+        //MUTEAR AUDIOSOURCE2
+        if (audioSource2.mute == false)
+        {
+            audioSource2.mute = true;
+        }
+        else
+        {
+            audioSource2.mute = false;
+        }
     }
 }

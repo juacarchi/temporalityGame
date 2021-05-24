@@ -9,7 +9,7 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
     BoxCollider2D bx;
     float step;
     float speed = 600;
-
+    float xMin, xMax, yMin, yMax; //Mathf.Clamp
     public float zValue = 1;
     bool isDraging = true;
     bool isReturning;
@@ -23,6 +23,10 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 
         rb2D = GetComponent<Rigidbody2D>();
         bx = GetComponent<BoxCollider2D>();
+        xMin = -6.9f;
+        xMax = 6.9f;
+        yMin = -4.6f;
+        yMax = 4.6f;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -31,6 +35,8 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = zValue;
         Vector3 point = Camera.main.ScreenToWorldPoint(mousePosition);
+        point.x = Mathf.Clamp(point.x, xMin, xMax);
+        point.y = Mathf.Clamp(point.y, yMin, yMax);
         transform.position = point;
         rb2D.simulated = false;
         rb2D.isKinematic = false;
