@@ -14,12 +14,12 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
     bool isDraging = true;
     bool isReturning;
     Vector2 anchoredPositionInitial;
+    bool wasTaken;
 
     private void Awake()
     {
         imageElement = GetComponent<Image>();
-        rectGO = GetComponent<RectTransform>();
-        anchoredPositionInitial = rectGO.anchoredPosition;
+        
 
         rb2D = GetComponent<Rigidbody2D>();
         bx = GetComponent<BoxCollider2D>();
@@ -31,7 +31,12 @@ public class DragDropSerializacion : MonoBehaviour, IDragHandler, IDropHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-
+        if (!wasTaken)
+        {
+            rectGO = GetComponent<RectTransform>();
+            anchoredPositionInitial = rectGO.anchoredPosition;
+            wasTaken = true;
+        }
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = zValue;
         Vector3 point = Camera.main.ScreenToWorldPoint(mousePosition);

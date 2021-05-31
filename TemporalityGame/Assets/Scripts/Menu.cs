@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    string url = "https://iquick.es";
     public void Play(int sceneIndex)
     {
         ManagerScene.instance.SetNumberSceneToChange(sceneIndex);
@@ -20,5 +21,13 @@ public class Menu : MonoBehaviour
     {
         SoundManager.instance.PlaySFX(SoundManager.instance.buttonSound);
         buttonPressed.interactable = false;
+    }
+    public void Exit()
+    {
+        //WebGL
+        //Application.OpenURL(url);
+
+        //ANDROID
+        Application.Quit();
     }
 }
